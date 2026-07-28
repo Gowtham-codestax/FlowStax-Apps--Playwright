@@ -1,0 +1,105 @@
+{
+  "baseUrl": "https://staging.flow.stax.run/login",
+
+
+  "CentralOps":{
+    
+    "branchTeam": {
+      "username": "branch_COPS_stag@gmail.com",
+      "password": "olvH~jMjqdmX-lYdecx3"
+    },
+
+    "kyc1Cops": {
+      "username": "KYC1_COPS_Stag@gmail.com",
+      "password": "dZnZGgFV!kROcvmyDRaf"
+    },
+
+    "kyc2Cops": {
+      "username": "KYC2_COPS_Stag@gmail.com",
+      "password": "EDaFiUnEMTN#~g96vovH"
+    },
+
+    "saoCops": {
+      "username": "SAO_COPS_Stag@gmail.com",
+      "password": "6xXoKo@se0GUqZQIeWwi"
+    },
+
+    "adminCops": {
+      "username": "admin_COPS_Stag@gmail.com",
+      "password": "~h1Fl$$BYNZA1$2Zeyra"
+    },
+
+    "FMU":{
+      "username": "fmu1_cops@gmail.com",
+      "password": "FPsvBbB6!!3Cfobbq$9E"
+    },
+
+    "CIFGrop":{
+      "username": "CIF1_COPS_Stagi@gmail.com",
+      "password": "kPI!~KsWwyh62TZD$ehN"
+    }
+
+  },
+
+  "KBZPay": {
+
+    "branchTeam": {
+      "username": "BranchTeam_KBZPay@gmail.com",
+      "password": "98DjpLo4WVsdI5HILPVI"
+    },
+
+    "tso": {
+      "username": "TSO_KBZPay@gmail.com",
+      "password": "i00TLMvg~OWa3wW@xCE7"
+    },
+
+    "closeLoop": {
+      "username": "closeloopteam@gmail.com",
+      "password": "Nw5ZQMJNx9uN85AJb0n0"
+    }
+
+   },
+   
+  "NonPoTeam":{
+    
+    "npoBranch": {
+      "username": "branch_npo@gmail.com",
+      "password": "P$2EorwK5cyc@Ar-8NOT"
+    },
+
+    "npoFunction": {
+      "username": "fuction_npo@gmail.com",
+      "password": "JS2!fjq#v~$RiHb1OcV~"
+    },
+
+    "npoFinanceAuthorizer": {
+      "username": "finance_authorizer_npo@gmail.com",
+      "password": "bbJyL6et2OCjao4hy30B"
+    },
+
+    "npoDcfo": {
+      "username": "dcfo_npo@gmail.com",
+      "password": "Pn!NskTNlvfJa8k~TRb$"
+    },
+
+    "npoCfo": {
+      "username": "cfo_npo@gmail.com",
+      "password": "9JnmmenusfeIqPebx~m~"
+    },
+
+    "npoDceo": {
+      "username": "dceo_npo@gmail.com",
+      "password": "I4xKC2BBKV@5syekUwx7"
+    },
+
+    "npoCeo": {
+      "username": "ceo_npo@gmail.com",
+      "password": "lBwHwJLyQX7qW#!OO~1A"
+    },
+
+    "npoFinanceReconcile": {
+      "username": "finance_reconcile_npo@gmail.com",
+      "password": "I9y0qsXlTx2u37ygJwis"
+    }
+  }
+}
