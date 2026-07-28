@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Playwright output / artifacts
+reports/
+test-results/
+playwright-report/
+blob-report/
+videos/
+screenshots/
+traces/
+/dist/
+
+# Credentials — DO NOT COMMIT (contains real usernames/passwords)
+test-data/loginData.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
