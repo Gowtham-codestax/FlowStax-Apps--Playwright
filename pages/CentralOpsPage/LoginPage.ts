@@ -19,14 +19,7 @@ export class LoginPage extends BasePage {
   }
 
   async login(user: string, pass: string): Promise<void> {
-    /*
-      // Via Google login
-      String parentWindow = driver.getWindowHandle();
-      By viaGoogle = By.xpath("//flt-semantics[contains(text(),'Login with Google')]");
-      ... (disabled in Java source) ...
-      // Password Entering
-    */
-
+    
     // Email
     const email = this.page.locator(
       "xpath=(//flt-semantics/span[.='Email ']/following::flt-semantics/input[@data-semantics-role='text-field'])[1]"

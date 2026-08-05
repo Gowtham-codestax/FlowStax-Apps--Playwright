@@ -13,7 +13,7 @@ export class CFIPages extends BasePage {
     super(page);
   }
 
-  async selectKYCUpdate(): Promise<void> {
+  async selectWorkFlowBtn(): Promise<void> {
     const KYCSelect = this.page.locator(
       "xpath=//flt-semantics[@style[contains(.,'width: 36px') and contains(.,'height: 34px')]]"
     );
@@ -25,7 +25,7 @@ export class CFIPages extends BasePage {
   async Duplicate_Phone_Number_Online_BankingOption(): Promise<void> {
     const opt = this.page.locator(
       "xpath=//flt-semantics/span[contains(.,'Duplicate Phone Number: Online Banking')]"
-    );
+    ).first();
     await opt.waitFor({ state: 'attached' });
     await this.page.waitForTimeout(1000);
     await this.forceClick(opt);
@@ -38,7 +38,7 @@ export class CFIPages extends BasePage {
   }
 
   async im_BankingOption(): Promise<void> {
-    const opt = this.page.locator("xpath=//flt-semantics/span[contains(.,'i/m Banking (CIF)')]");
+    const opt = this.page.locator("xpath=//flt-semantics/span[contains(.,'i/m Banking (CIF)')]").first();
     await opt.waitFor({ state: 'attached' });
     await this.page.waitForTimeout(1000);
     await this.forceClick(opt);
@@ -48,6 +48,21 @@ export class CFIPages extends BasePage {
     await Pull.waitFor({ state: 'attached' });
     await this.page.waitForTimeout(500);
     await this.forceClick(Pull);
+  }
+
+  async accountUnlock_SuspesiousOption():Promise<void>{
+
+    const opt= this.page.locator("xpath=//flt-semantics/span[contains(.,'Account Unlock - Suspicious Activity Detected Case')]").first();
+    await opt.waitFor({state: 'visible'});
+    await this.page.waitForTimeout(1000);
+    await this.forceClick(opt);
+    await this.page.waitForTimeout(600);
+
+    const Pull = this.page.locator("xpath=//flt-semantics[@role='button' and .='Pull']");
+    await Pull.waitFor({ state: 'attached' });
+    await this.page.waitForTimeout(500);
+    await this.forceClick(Pull);
+
   }
 
   async PullOptionButon(): Promise<void> {
@@ -78,6 +93,13 @@ export class CFIPages extends BasePage {
     await eyeiconbtn.evaluate((el: HTMLElement) => el.scrollIntoView({ block: 'center' }));
     await this.page.waitForTimeout(1000);
     await this.forceClick(eyeiconbtn);
+  }
+
+  async unlockUserBtn():Promise<void>{
+    const unlockUserOption = this.page.locator("xpath=//flt-semantics[contains(text(),'Unlock User')]");
+    await unlockUserOption.waitFor({state: 'attached'});
+    await this.page.waitForTimeout(3000);
+    await this.forceClick(unlockUserOption);
   }
 
   async startActionebutton(): Promise<void> {

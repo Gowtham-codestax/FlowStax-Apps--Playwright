@@ -1,4 +1,4 @@
-import { test, Page } from '@playwright/test';
+import { test, Page, BrowserContext } from '@playwright/test';
 import loginData from '../../test-data/loginData.json';
 
 import { LoginPage } from '../../pages/CentralOpsPage/LoginPage';
@@ -18,10 +18,15 @@ const {
 test.describe.serial('PettyCashFlow', () => {
   test.describe.configure({ timeout: 15 * 60 * 1000 });
 
+  let context: BrowserContext;
   let page: Page;
 
   test.beforeAll(async ({ browser }) => {
-    page = await browser.newPage();
+    context = await browser.newContext({
+      viewport: null,
+      recordVideo: { dir: 'videos' },
+    });
+    page = await context.newPage();
     if (loginData.baseUrl) 
       await page.goto(loginData.baseUrl);
   });
@@ -202,6 +207,7 @@ test.describe.serial('PettyCashFlow', () => {
 
   test.afterAll(async () => {
     await page?.close();
+    await context?.close();
   });
 
 

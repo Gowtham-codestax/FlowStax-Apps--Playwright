@@ -32,8 +32,9 @@ export class Duplicate_Phone_Number_Online_BankingPage extends BasePage {
       "xpath=//flt-semantics/span[.='Customer ID *']/following::flt-semantics[1]/input[@data-semantics-role='text-field']"
     );
     await CusId.waitFor({ state: 'attached' });
-    await this.page.waitForTimeout(800);
-    await CusId.click();
+    await this.page.waitForTimeout(500);
+    await this.forceClick(CusId);
+    // await CusId.click();
     await this.page.waitForTimeout(300);
     await CusId.pressSequentially('123456711');
 
@@ -42,7 +43,6 @@ export class Duplicate_Phone_Number_Online_BankingPage extends BasePage {
     );
     await CusName.waitFor({ state: 'attached' });
     await this.page.waitForTimeout(800);
-    await this.page.waitForTimeout(500);
     await CusName.hover();
     await CusName.click();
     await CusName.pressSequentially('Test');

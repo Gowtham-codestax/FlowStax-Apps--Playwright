@@ -1,4 +1,4 @@
-import { test, Page } from '@playwright/test';
+import { test, Page, BrowserContext } from '@playwright/test';
 import loginData from '../../test-data/loginData.json';
 
 import { LoginPage } from '../../pages/CentralOpsPage/LoginPage';
@@ -13,10 +13,15 @@ test.describe.serial('accountClose', () => {
   test.describe.configure({ timeout: 15 * 60 * 1000 }); // long serial flows
 
   // Single shared page across all dependent tests (BaseClass equivalent).
+  let context: BrowserContext;
   let page: Page;
 
   test.beforeAll(async ({ browser }) => {
-    page = await browser.newPage();
+    context = await browser.newContext({
+      viewport: null,
+      recordVideo: { dir: 'test-results/videos' },
+    });
+    page = await context.newPage();
     if (loginData.baseUrl) {
       await page.goto(loginData.baseUrl);
     }
@@ -192,6 +197,7 @@ test.describe.serial('accountClose', () => {
 
     test.afterAll(async () => {
     await page?.close();
+    await context?.close();
   });
 
   

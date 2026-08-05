@@ -33,17 +33,18 @@ export class KYCPage extends BasePage {
     // CUS ID
     const CusId = this.page.locator(
       "xpath=//flt-semantics/span[.='Customer ID *']/following::flt-semantics[1]/input[@data-semantics-role='text-field']"
-    );
+    ).first();
     await CusId.waitFor({ state: 'attached' });
-    await this.page.waitForTimeout(800);
-    await CusId.click();
+    await this.page.waitForTimeout(500);
+    await this.forceClick(CusId);
+    // await CusId.click();
     await this.page.waitForTimeout(300);
     await CusId.pressSequentially('123456711');
 
     // CUS Name
     const CusName = this.page.locator(
       "xpath=//flt-semantics/span[.='Customer Name *']/following::flt-semantics[1]/input[@data-semantics-role='text-field']"
-    );
+    ).first();
     await CusName.waitFor({ state: 'attached' });
     await this.page.waitForTimeout(800);
     await this.page.waitForTimeout(200);
@@ -56,15 +57,15 @@ export class KYCPage extends BasePage {
       "xpath=//flt-semantics/span[.='Premium']/preceding::flt-semantics[1][@role='radio']"
     );
     await PremiumRadioBtn.waitFor({ state: 'attached' });
-    await this.page.waitForTimeout(800);
+    await this.page.waitForTimeout(500);
     await PremiumRadioBtn.click();
 
     // Customer Email
     const Email_Field = this.page.locator(
       "xpath=//flt-semantics/span[.='Email ID']/following::flt-semantics[1]/input[@data-semantics-role='text-field']"
-    );
+    ).first();
     await Email_Field.waitFor({ state: 'visible' });
-    await this.page.waitForTimeout(800);
+    await this.page.waitForTimeout(500);
     await Email_Field.click();
     await this.page.waitForTimeout(200);
     await Email_Field.pressSequentially('Test@gmail.com');
@@ -72,10 +73,11 @@ export class KYCPage extends BasePage {
     // Customer Phone Number
     const Contact_Field = this.page.locator(
       "xpath=//flt-semantics/span[.='Contact Number']/following::flt-semantics[2]/input[@data-semantics-role='text-field']"
-    );
+    ).first();
     await Contact_Field.waitFor({ state: 'attached' });
-    await this.page.waitForTimeout(800);
-    await Contact_Field.click();
+    await this.page.waitForTimeout(500);
+    await this.forceClick(Contact_Field);
+    // await Contact_Field.click();
     await Contact_Field.pressSequentially('678976777');
 
     // Customer Passport Type
@@ -101,7 +103,7 @@ export class KYCPage extends BasePage {
   async passPortNumField(): Promise<void> {
     const PassportNumField = this.page.locator(
       "xpath=//flt-semantics/span[.='Passport Number *']/following::flt-semantics[1]/input[@data-semantics-role='text-field']"
-    );
+    ).first();
     await PassportNumField.waitFor({ state: 'attached' });
     await this.page.waitForTimeout(500);
     await PassportNumField.click();
@@ -118,7 +120,7 @@ export class KYCPage extends BasePage {
   async Regular_KYC_RequestBtn(): Promise<void> {
     const RegularKYCRadioBtn = this.page.locator(
       "xpath=//flt-semantics/span[.='Regular Request']/preceding::flt-semantics[1][@role='radio']"
-    );
+    ).first();
     await RegularKYCRadioBtn.waitFor({ state: 'attached' });
     await this.page.waitForTimeout(400);
     await RegularKYCRadioBtn.click();
@@ -127,7 +129,7 @@ export class KYCPage extends BasePage {
   async idClose_IdOpenRadioBtn(): Promise<void> {
     const RegularKYCRadioBtn = this.page.locator(
       "xpath=//flt-semantics/span[.='999 ID Closed / 999 ID Reopen']/preceding::flt-semantics[1][@role='radio']"
-    );
+    ).first();
     await RegularKYCRadioBtn.waitFor({ state: 'attached' });
     await this.page.waitForTimeout(400);
     await RegularKYCRadioBtn.click();
@@ -168,8 +170,9 @@ export class KYCPage extends BasePage {
   }
 
   async NextButton(): Promise<void> {
-    const NxtBtn = this.page.locator("xpath=//flt-semantics[.='Next']");
+    const NxtBtn = this.page.locator("xpath=//flt-semantics[.='Next']").first();
     await NxtBtn.waitFor({ state: 'visible' });
+    await this.page.waitForTimeout(50);
     await NxtBtn.click();
   }
 
@@ -195,7 +198,7 @@ export class KYCPage extends BasePage {
 
     const DOB_Checkbox = this.page.locator(
       "xpath=//flt-semantics/span[.='Type of KYC Change Request *']/following::flt-semantics[@aria-label='DOB Change'][@role='checkbox']"
-    );
+    ).filter();
     await DOB_Checkbox.waitFor({ state: 'attached' });
     await this.page.waitForTimeout(500);
     await DOB_Checkbox.evaluate((el: HTMLElement) => el.scrollIntoView({ behavior: 'smooth' }));
@@ -225,7 +228,7 @@ export class KYCPage extends BasePage {
       try {
         await menu.waitFor({ state: 'attached' });
         await menu.evaluate((el: HTMLElement) => el.scrollIntoView({ block: 'center' }));
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForTimeout(3500);
         await menu.evaluate((el: HTMLElement) =>
           el.dispatchEvent(new MouseEvent('click', { bubbles: true }))
         );

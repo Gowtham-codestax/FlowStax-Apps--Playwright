@@ -1,13 +1,8 @@
-/**
- * Source (Java): org.KycVerificationAppPages.KycOfficerPage
- * Migrated to: Playwright + TypeScript (Page Object)
- * - PullOptionButon retry loop kept at 5; eyeIconBtn TAB nav x33, same sleeps.
- * - js click/scrollIntoView -> forceClick()/locator.evaluate(). xpath copied EXACTLY.
- */
 import { Page } from '@playwright/test';
 import { BasePage } from '../../fixtures/BasePage';
 
 export class KycOfficerPage extends BasePage {
+
   constructor(page: Page) {
     super(page);
   }
@@ -21,7 +16,7 @@ export class KycOfficerPage extends BasePage {
         await Pull.waitFor({ state: 'attached' });
         await Pull.evaluate((el: HTMLElement) => el.scrollIntoView({ block: 'center' }));
         await this.forceClick(Pull);
-        console.log(i + 1);
+       // console.log(i + 1);
         await this.page.waitForTimeout(1000);
       } catch (e) {
         console.log(e);

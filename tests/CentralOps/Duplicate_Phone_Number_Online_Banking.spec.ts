@@ -3,7 +3,7 @@
  * Migrated to: Playwright + TypeScript
  * - @Test(priority, dependsOnMethods) -> test.describe.serial() (1..2). Creds from loginData.json.
  */
-import { test, Page } from '@playwright/test';
+import { test, Page, BrowserContext } from '@playwright/test';
 import loginData from '../../test-data/loginData.json';
 
 import { LoginPage } from '../../pages/CentralOpsPage/LoginPage';
@@ -17,15 +17,21 @@ const { branchTeam, CIFGrop } = loginData.CentralOps;
 test.describe.serial('Duplicate_Phone_Number_Online_Banking', () => {
   test.describe.configure({ timeout: 15 * 60 * 1000 });
 
+  let context: BrowserContext;
   let page: Page;
 
   test.beforeAll(async ({ browser }) => {
-    page = await browser.newPage();
+    context = await browser.newContext({
+      viewport: null,
+      recordVideo: { dir: 'videos' },
+    });
+    page = await context.newPage();
     if (loginData.baseUrl) await page.goto(loginData.baseUrl);
   });
 
   test.afterAll(async () => {
     await page?.close();
+    await context?.close();
   });
 
   // priority 1
@@ -67,7 +73,7 @@ test.describe.serial('Duplicate_Phone_Number_Online_Banking', () => {
     const CFI = new CFIPages(page);
 
     await login.login(CIFGrop.username, CIFGrop.password);
-    await CFI.selectKYCUpdate();
+    await CFI.selectWorkFlowBtn();
     await CFI.Duplicate_Phone_Number_Online_BankingOption();
     await CFI.PullOptionButon();
     await CFI.EyeIconbtnClick();

@@ -31,11 +31,12 @@ export class Im_Banking_CIFPage extends BasePage {
     // CUS ID
     const CusId = this.page.locator(
       "xpath=//flt-semantics/span[.='Customer ID *']/following::flt-semantics[1]/input[@data-semantics-role='text-field']"
-    );
+    ).first();
     await CusId.waitFor({ state: 'attached' });
     await this.page.waitForTimeout(800);
-    await CusId.click();
-    await this.page.waitForTimeout(300);
+    await this.forceClick(CusId);
+    // await CusId.click();
+    await this.page.waitForTimeout(200);
     await CusId.pressSequentially('123456711');
 
     // CUS Name
@@ -65,7 +66,7 @@ export class Im_Banking_CIFPage extends BasePage {
     await this.page.waitForTimeout(800);
     await Email_Field.evaluate((el: HTMLElement) => el.scrollIntoView({ block: 'center' }));
     await Email_Field.click();
-    await this.page.waitForTimeout(200);
+    await this.page.waitForTimeout(100);
     await Email_Field.pressSequentially('Test@gmail.com');
 
     // Contact number
@@ -73,7 +74,7 @@ export class Im_Banking_CIFPage extends BasePage {
       "xpath=//flt-semantics/span[.='Contact Number *']/following::flt-semantics[2]/input[@data-semantics-role='text-field']"
     );
     await Contact_Field.waitFor({ state: 'attached' });
-    await this.page.waitForTimeout(800);
+   // await this.page.waitForTimeout(500);
     await Contact_Field.click();
     await Contact_Field.pressSequentially('678976777');
   }
@@ -198,7 +199,7 @@ export class Im_Banking_CIFPage extends BasePage {
     await boxes.first().waitFor({ state: 'attached' });
     await this.page.waitForTimeout(1000);
     for (let i = 0; i < 5; i++) {
-      await this.page.waitForTimeout(700);
+     // await this.page.waitForTimeout(700);
       await this.forceClick(boxes.nth(i));
     }
   }

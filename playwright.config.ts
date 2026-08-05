@@ -7,7 +7,7 @@ import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   
- //📁 Test location
+ //📁Test location
   testDir: './tests',
 
 
@@ -17,21 +17,21 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
  // retries: process.env.CI ? 1 : 0,
 
- // 🔁 Retry failed tests 
+ //🔁Retry failed tests 
   retries:0,
 
  //🚀 Parallel execution
-  workers: 2,
+  workers: 4,
 
 
  // test can run for minutes. The default per-test timeout (30s) is far too low.
   timeout: 2 * 60 * 1000, // 2 minutes per test (whole TestNG flow is one long serial test)
 
- //⏱️ Expect assertion timeout
+ //⏱️Expect assertion timeout
   expect: { timeout: 30_000 },
 
 
- //👀 Reporters
+ //👀Reporters
   reporter: [
     ['list'],
     ['allure-playwright', {
@@ -41,11 +41,11 @@ export default defineConfig({
     ['json', { outputFile: 'reports/results.json' }],
   ],
 
- // Artifacts -> screenshots / videos / traces
+ //Artifacts -> screenshots / videos / traces
   outputDir: './test-results',
 
 
-  //🌐 Browser settings
+  //🌐Browser settings
   use: {
     baseURL: 'https://staging.flow.stax.run/login',
 
@@ -88,7 +88,7 @@ export default defineConfig({
       },
     },
 
-    /*
+    /*    
     {
       name: 'chrome',
       use: {
@@ -122,7 +122,8 @@ export default defineConfig({
         viewport: null,
         launchOptions : {args: ['--start-maximized']},
       },
-    }, */ 
+    }, 
+    */
   ],
 
 

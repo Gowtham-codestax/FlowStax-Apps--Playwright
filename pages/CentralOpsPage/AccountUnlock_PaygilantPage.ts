@@ -1,4 +1,4 @@
-import { Page } from '@playwright/test';
+import { expect, Page } from '@playwright/test';
 import { BasePage } from '../../fixtures/BasePage';
 
 export class AccountUnlock_PaygilantPage extends BasePage
@@ -171,7 +171,7 @@ export class AccountUnlock_PaygilantPage extends BasePage
         await Lockedreason_yesRadioBtn.check();
 
         // Login lock Radio Btn
-        const LoginLocked_yesRadioBtn= this.page.locator("xpath=//flt-semantics/span[.='Login Locked? *']/following::flt-semantics[@role='radio'][1]");
+        const LoginLocked_yesRadioBtn= this.page.locator("xpath=//flt-semantics/span[.='Login Locked? *']/following::flt-semantics[@role='radio'][1]").first();
         await LoginLocked_yesRadioBtn.waitFor({state: 'attached'});
         await this.page.waitForTimeout(200);
         await LoginLocked_yesRadioBtn.check();
@@ -228,8 +228,44 @@ export class AccountUnlock_PaygilantPage extends BasePage
         // Next Button
         const NxtBtn = this.page.locator("xpath=//flt-semantics[.='Next']");
         await NxtBtn.waitFor({ state: 'visible' });
-        await NxtBtn.click();
+        await this.forceClick(NxtBtn);
+       // await NxtBtn.click();
+        this.page.waitForTimeout(3500);
     }
+
+    async startActionBtn(): Promise<void>{
+
+        const StartAction=this.page.locator("xpath=//flt-semantics[.='Start Action']");
+        await StartAction.waitFor({state: 'visible'});
+        await StartAction.click();
+    }
+
+
+    async escalatebtn():Promise<void>{
+
+        const esacalte= this.page.locator("xpath=//flt-semantics[@role='button' and contains(text(),'Escalate')]");
+        await esacalte.waitFor({state: 'visible'});
+        await esacalte.click();
+    }
+
+    async MakeForCorrectionBtn(): Promise<void>{
+
+      const MakeForCorrection= this.page.locator("xpath=//flt-semantics[@role='button'  and contains(text(),'Mark for Correction')]");
+      await MakeForCorrection.waitFor({state: 'visible'});
+      await expect(MakeForCorrection).toBeEnabled();
+      await MakeForCorrection.click();
+    }
+
+    async reSubmitBtn():Promise<void>{
+
+        const Resubmit= this.page.locator("xpath=//flt-semantics[.='Resubmit']");
+        await Resubmit.waitFor({state: 'visible'});
+        await expect(Resubmit).toBeEnabled();
+        await Resubmit.click();
+
+    }
+
+    
 
 
 }

@@ -162,7 +162,7 @@ export class accountClosePage extends BasePage {
     );
     await currentBalNumField.waitFor({ state: 'visible' });
     await currentBalNumField.click(); // focuses the currency field 
-    await this.page.waitForTimeout(1000);
+    await this.page.waitForTimeout(1200);
     // keyboard.type into the focused field: pressSequentially/fill re-run input-level
     // actionability on this Flutter currency input and stall (like Selenium sendKeys).
     await this.page.keyboard.type('2000000');

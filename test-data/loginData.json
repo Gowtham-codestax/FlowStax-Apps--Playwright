@@ -101,5 +101,33 @@
       "username": "finance_reconcile_npo@gmail.com",
       "password": "I9y0qsXlTx2u37ygJwis"
     }
+  },
+
+  "KYCVerification": {
+
+    "Maker": {
+      "username": "branch_sr@gmail.com",
+      "password": "HybjyJcjHWAYtgTvXbe!"
+    },
+
+    "kbzPayCenterSr": {
+      "username": "kbzpaycenter_sr@gmail.com",
+      "password": "4vI$kVgf6hFwdyG2qnXR"
+    },
+
+    "kbzPayCenterChecker1": {
+      "username": "KBZPayCenter_checker1@gmail.com",
+      "password": "w8O$cz~CI6hV7L-tc4SG"
+    },
+
+    "kycOfficer": {
+      "username": "kycofficer_sr@gmail.com",
+      "password": "DD5GK7Ki6W18NgYoQPA8"
+    },
+
+    "clusterMgr1": {
+      "username": "clustermgr1@gmail.com",
+      "password": "g4-22t~zaco52DVuZfG7"
+    }
   }
 }
