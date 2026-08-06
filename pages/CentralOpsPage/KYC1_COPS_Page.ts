@@ -28,6 +28,7 @@ export class KYC1_COPS_Page extends BasePage {
     await actionbtn.evaluate((el: HTMLElement) => el.scrollIntoView(true));
     await this.forceClick(actionbtn);
   }
+  
 
   async PullOptionButon(): Promise<void> {
     for (let i = 0; i < 5; i++) {
@@ -74,6 +75,17 @@ export class KYC1_COPS_Page extends BasePage {
     await KYC_Update_workflow_Btn.waitFor({ state: 'attached' });
     await this.page.waitForTimeout(300);
     await this.forceClick(KYC_Update_workflow_Btn);
+  }
+
+  async companyKycUpdateOption(): Promise<void> {
+
+    const companyKycUpdateOption = this.page.locator("xpath=//flt-semantics/span[contains(.,'Company KYC Update')]"
+    );
+
+    await companyKycUpdateOption.waitFor({ state: 'attached' });
+    await this.page.waitForTimeout(300);
+    await this.forceClick(companyKycUpdateOption);
+
   }
 
   async PullButton(): Promise<void> {

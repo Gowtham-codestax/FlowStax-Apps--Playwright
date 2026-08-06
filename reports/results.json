@@ -4,7 +4,8 @@
       "C:\\Program Files\\nodejs\\node.exe",
       "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\node_modules\\@playwright\\test\\cli.js",
       "test",
-      "tests/KycVerification/Account_Close_Request.spec.ts",
+      "tests/CentralOps/CompanyKYCUpdateTest.spec.ts",
+      "--project=chromium",
       "--workers=1"
     ],
     "configFile": "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\playwright.config.ts",
@@ -80,21 +81,21 @@
   },
   "suites": [
     {
-      "title": "KycVerification\\Account_Close_Request.spec.ts",
-      "file": "KycVerification/Account_Close_Request.spec.ts",
+      "title": "CentralOps\\CompanyKYCUpdateTest.spec.ts",
+      "file": "CentralOps/CompanyKYCUpdateTest.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Account Close Request ",
-          "file": "KycVerification/Account_Close_Request.spec.ts",
+          "title": "Company KYC Update -  Flow",
+          "file": "CentralOps/CompanyKYCUpdateTest.spec.ts",
           "line": 14,
-          "column": 6,
+          "column": 15,
           "specs": [
             {
-              "title": "Account Close Request - Branch Flow ",
-              "ok": false,
+              "title": "Company KYC Update - Branch ",
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -107,161 +108,20 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 48476,
-                      "error": {
-                        "message": "Error: locator.waitFor: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('xpath=(//flt-semantics/span[.=\\'Email \\']/following::flt-semantics/input[@data-semantics-role=\\'text-field\\'])[1]')\u001b[22m\n\u001b[2m    - waiting for \"https://staging.flow.stax.run/login\" navigation to finish...\u001b[22m\n\u001b[2m    - navigated to \"https://staging.flow.stax.run/login\"\u001b[22m\n",
-                        "stack": "Error: locator.waitFor: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('xpath=(//flt-semantics/span[.=\\'Email \\']/following::flt-semantics/input[@data-semantics-role=\\'text-field\\'])[1]')\u001b[22m\n\u001b[2m    - waiting for \"https://staging.flow.stax.run/login\" navigation to finish...\u001b[22m\n\u001b[2m    - navigated to \"https://staging.flow.stax.run/login\"\u001b[22m\n\n    at LoginPage.login (C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\pages\\CentralOpsPage\\LoginPage.ts:35:17)\n    at C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\tests\\KycVerification\\Account_Close_Request.spec.ts:42:5",
-                        "location": {
-                          "file": "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\pages\\CentralOpsPage\\LoginPage.ts",
-                          "column": 17,
-                          "line": 35
-                        },
-                        "snippet": "\u001b[90m   at \u001b[39m..\\pages\\CentralOpsPage\\LoginPage.ts:35\n\n\u001b[0m \u001b[90m 33 |\u001b[39m     )\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m300\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m email\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m email\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m     \u001b[36mawait\u001b[39m email\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\pages\\CentralOpsPage\\LoginPage.ts",
-                            "column": 17,
-                            "line": 35
-                          },
-                          "message": "Error: locator.waitFor: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('xpath=(//flt-semantics/span[.=\\'Email \\']/following::flt-semantics/input[@data-semantics-role=\\'text-field\\'])[1]')\u001b[22m\n\u001b[2m    - waiting for \"https://staging.flow.stax.run/login\" navigation to finish...\u001b[22m\n\u001b[2m    - navigated to \"https://staging.flow.stax.run/login\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\CentralOpsPage\\LoginPage.ts:35\n\n\u001b[0m \u001b[90m 33 |\u001b[39m     )\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m300\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m email\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m email\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m     \u001b[36mawait\u001b[39m email\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at LoginPage.login (C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\pages\\CentralOpsPage\\LoginPage.ts:35:17)\u001b[22m\n\u001b[2m    at C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\tests\\KycVerification\\Account_Close_Request.spec.ts:42:5\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-08-03T06:19:24.852Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\test-results\\KycVerification-Account_Cl-d1b71-lose-Request---Branch-Flow--chromium\\error-context.md"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\test-results\\KycVerification-Account_Cl-d1b71-lose-Request---Branch-Flow--chromium\\error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\test-results\\KycVerification-Account_Cl-d1b71-lose-Request---Branch-Flow--chromium\\trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\pages\\CentralOpsPage\\LoginPage.ts",
-                        "column": 17,
-                        "line": 35
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "ea8ec74b91ff8bcc1062-6dd89a3915f162a4895c",
-              "file": "KycVerification/Account_Close_Request.spec.ts",
-              "line": 34,
-              "column": 5
-            },
-            {
-              "title": "Kyc Officer Flow ",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 900000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 14322,
-                      "error": {
-                        "message": "Error: locator.waitFor: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('xpath=(//flt-semantics/span[.=\\'Email \\']/following::flt-semantics/input[@data-semantics-role=\\'text-field\\'])[1]')\u001b[22m\n",
-                        "stack": "Error: locator.waitFor: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('xpath=(//flt-semantics/span[.=\\'Email \\']/following::flt-semantics/input[@data-semantics-role=\\'text-field\\'])[1]')\u001b[22m\n\n    at LoginPage.login (C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\pages\\CentralOpsPage\\LoginPage.ts:35:17)\n    at C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\tests\\KycVerification\\Account_Close_Request.spec.ts:99:5",
-                        "location": {
-                          "file": "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\pages\\CentralOpsPage\\LoginPage.ts",
-                          "column": 17,
-                          "line": 35
-                        },
-                        "snippet": "\u001b[90m   at \u001b[39m..\\pages\\CentralOpsPage\\LoginPage.ts:35\n\n\u001b[0m \u001b[90m 33 |\u001b[39m     )\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m300\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m email\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m email\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m     \u001b[36mawait\u001b[39m email\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\pages\\CentralOpsPage\\LoginPage.ts",
-                            "column": 17,
-                            "line": 35
-                          },
-                          "message": "Error: locator.waitFor: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('xpath=(//flt-semantics/span[.=\\'Email \\']/following::flt-semantics/input[@data-semantics-role=\\'text-field\\'])[1]')\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\CentralOpsPage\\LoginPage.ts:35\n\n\u001b[0m \u001b[90m 33 |\u001b[39m     )\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m300\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m email\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m email\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m     \u001b[36mawait\u001b[39m email\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at LoginPage.login (C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\pages\\CentralOpsPage\\LoginPage.ts:35:17)\u001b[22m\n\u001b[2m    at C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\tests\\KycVerification\\Account_Close_Request.spec.ts:99:5\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-08-03T06:20:26.851Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\test-results\\KycVerification-Account_Cl-91a45-e-Request-Kyc-Officer-Flow--chromium\\error-context.md"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\test-results\\KycVerification-Account_Cl-91a45-e-Request-Kyc-Officer-Flow--chromium\\error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\test-results\\KycVerification-Account_Cl-91a45-e-Request-Kyc-Officer-Flow--chromium\\trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\pages\\CentralOpsPage\\LoginPage.ts",
-                        "column": 17,
-                        "line": 35
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "ea8ec74b91ff8bcc1062-7605c4c2bf81b4efefbe",
-              "file": "KycVerification/Account_Close_Request.spec.ts",
-              "line": 92,
-              "column": 5
-            },
-            {
-              "title": "Branch Flow -",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 900000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1,
+                      "duration": 125137,
                       "errors": [],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "Menu clicked\n"
+                        },
+                        {
+                          "text": "Logout success\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T06:20:45.170Z",
+                      "startTime": "2026-08-06T06:01:21.495Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -269,10 +129,10 @@
                   "status": "expected"
                 }
               ],
-              "id": "ea8ec74b91ff8bcc1062-6a55135ccee36ea6aa72",
-              "file": "KycVerification/Account_Close_Request.spec.ts",
-              "line": 118,
-              "column": 5
+              "id": "89758e397fbb68a0f49a-d85f5d591c7f6436ab15",
+              "file": "CentralOps/CompanyKYCUpdateTest.spec.ts",
+              "line": 33,
+              "column": 10
             }
           ]
         }
@@ -281,11 +141,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-08-03T06:19:24.364Z",
-    "duration": 82887.366,
+    "startTime": "2026-08-06T06:01:21.094Z",
+    "duration": 128100.394,
     "expected": 1,
     "skipped": 0,
-    "unexpected": 2,
+    "unexpected": 0,
     "flaky": 0
   }
 }

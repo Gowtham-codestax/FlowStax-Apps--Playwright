@@ -19,6 +19,13 @@ export class KYCPage extends BasePage {
     super(page);
   }
 
+  async categoryDD(): Promise<void> {
+        const CategorySelection =this.page.locator("xpath=(//span[.='Please select']/parent::flt-semantics)[1]");
+        await CategorySelection.waitFor({state: 'attached'});
+        await this.page.waitForTimeout(1000);
+        await CategorySelection.click();
+  }
+
   async selectKYCupdate(): Promise<void> {
     const categoryDD = this.page.locator("xpath=(//span[.='Please select']/parent::flt-semantics)[1]");
     await categoryDD.click();

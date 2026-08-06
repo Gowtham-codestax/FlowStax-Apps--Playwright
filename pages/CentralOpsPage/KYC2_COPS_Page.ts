@@ -26,9 +26,9 @@ export class KYC2_COPS_Page extends BasePage {
     );
   }
 
-  async markAsCorrection(): Promise<void> {
+  async markForCorrection(): Promise<void> {
     const MakecorrectionButon = this.page.locator(
-      "xpath=(//flt-semantics[@style[contains(.,'position: absolute; overflow: visible; width: 140px; height: 28px; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 165, 13.5); pointer-events: all; z-index: 2;')]])[1]"
+      "xpath=//flt-semantics[@role='button' and contains(.,'Mark for Correction')]"
     );
     await MakecorrectionButon.waitFor({ state: 'visible' });
     await MakecorrectionButon.evaluate((el: HTMLElement) => el.scrollIntoView({ block: 'center' }));
