@@ -25,7 +25,7 @@ export class KBZPayCenterChecker1Page extends BasePage {
     await this.page.waitForTimeout(4000);
     for (let i = 0; i < 30; i++) {
       await this.page.keyboard.press('Tab');
-      await this.page.waitForTimeout(500);
+      await this.page.waitForTimeout(200);
     }
     const eyeiconbtn = this.page.locator(
       "xpath=(//flt-semantics[@style='position: absolute; overflow: visible; width: 40px; height: 40px; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 100, 7.5); pointer-events: all;'])[1]"
@@ -62,6 +62,15 @@ export class KBZPayCenterChecker1Page extends BasePage {
     await this.page.waitForTimeout(1000);
   }
 
+  async Resubmitbtn(): Promise<void> {
+    const loc = this.page.locator(
+      "xpath=//flt-semantics[@role='button' and contains(.,'Resubmit')]"
+    );
+    await loc.waitFor({ state: 'visible' });
+    await loc.click();
+    await this.page.waitForTimeout(1000);
+  }
+
   async UpdateSatgeCMNTbox(): Promise<void> {
     const UpdateSatgeCMNtTextField = this.page.locator(
       "xpath=//flt-semantics/span/following::flt-semantics/textarea[@data-semantics-role='text-field']"
@@ -71,4 +80,20 @@ export class KBZPayCenterChecker1Page extends BasePage {
     await UpdateSatgeCMNtTextField.click();
     await UpdateSatgeCMNtTextField.pressSequentially('Done');
   }
+
+  async KbzPayCenterChecker_Radiontn(){
+    const loc = this.page.locator("xpath=//flt-semantics/span[.='KBZPay Center Checker']/preceding::flt-semantics[1][@role='radio']");
+    await loc.waitFor({state:'visible'})
+    await this.page.waitForTimeout(1000);
+    await loc.check();
+  }
+
+  async ClusterManager_RadioBtn(){
+    const loc= this.page.locator("xpath=//flt-semantics/span[.='Cluster Manager']/preceding::flt-semantics[1][@role='radio']");
+    await loc.waitFor({state:'visible'});
+    await this.page.waitForTimeout(1000);
+    await loc.check();
+  }
+
+  
 }

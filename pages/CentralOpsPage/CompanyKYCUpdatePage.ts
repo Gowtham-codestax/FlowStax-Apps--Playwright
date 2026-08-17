@@ -97,7 +97,9 @@ export class CompanyKYCUpdatePage extends BasePage {
     const index :number[]= [ 0,1,5,7,8];
     for(const i of index){
       const cb = checkboxes.nth(i);
+      await cb.waitFor({ state: 'visible' });
       await cb.check();
+      await this.page.waitForTimeout(1200);
       await expect(cb).toBeChecked();
     }
   }
@@ -169,6 +171,7 @@ export class CompanyKYCUpdatePage extends BasePage {
     for(const i of index){
       const cb = checkboxes.nth(i);
       await cb.check();
+      await this.page.waitForTimeout(1200);
       await expect(cb).toBeChecked();
     } 
 
@@ -198,6 +201,7 @@ export class CompanyKYCUpdatePage extends BasePage {
     await this.page.waitForTimeout(2000);
     await this.forceClick(reqclosebtn);
   }
+  
   
 
 

@@ -27,6 +27,7 @@ export class customerUrgentRequestPages extends BasePage {
 
     const Calender = this.page.locator("xpath=//input[@aria-label='YYYY-MM-DD']");
     await Calender.waitFor({ state: 'visible' });
+    await this.page.waitForTimeout(1000);
     await Calender.click();
 
     const today = this.page.locator(
@@ -68,7 +69,7 @@ export class customerUrgentRequestPages extends BasePage {
     await this.page.waitForTimeout(1500);
     await CusName.hover();
     await CusName.click();
-    await CusName.pressSequentially(' Kumar');
+    await CusName.pressSequentially(' Test');
 
     const CusPhn = this.page.locator("xpath=(//input[@data-semantics-role='text-field'])[3]");
     await CusPhn.waitFor({ state: 'visible' });
@@ -176,7 +177,7 @@ export class customerUrgentRequestPages extends BasePage {
     await NxtBtn.click();
   }
 
-  async SendCheckerButtonClick(): Promise<void> {
+ /* async SendCheckerButtonClick(): Promise<void> {
     await this.page.waitForTimeout(4000);
     for (let i = 0; i < 27; i++) {
       await this.page.keyboard.press('Tab');
@@ -188,6 +189,25 @@ export class customerUrgentRequestPages extends BasePage {
     await sendcheckerbtn.waitFor({ state: 'visible' });
     await this.page.waitForTimeout(3000);
     await sendcheckerbtn.click();
+  }
+    */
+
+  async SendCheckerButtonClick():Promise<void>{
+    const sendcheckerbtn = this.page.locator(
+      "xpath=//flt-semantics[@role='button' and contains(text(),'Send to Checker')]"
+    );
+    await sendcheckerbtn.waitFor({ state: 'visible' });
+    await this.page.waitForTimeout(3000);
+    await sendcheckerbtn.click();
+  }
+
+  async reSubmitButtonClick():Promise<void>{
+    const loc = this.page.locator(
+      "xpath=//flt-semantics[@role='button' and contains(text(),'Resubmit')]"
+    );
+    await loc.waitFor({ state: 'visible' });
+    await this.page.waitForTimeout(3000);
+    await loc.click();
   }
 
   async KBZcenterCheckerRadioButon(): Promise<void> {

@@ -74,7 +74,7 @@ test.describe.serial('Duplicate_Phone_Number_Online_Banking_Denied', () => {
     const CFI = new CFIPages(page);
 
     await login.login(CIFGrop.username, CIFGrop.password);
-    await CFI.selectKYCUpdate();
+    await CFI.selectWorkFlowBtn();
     await CFI.Duplicate_Phone_Number_Online_BankingOption();
     await CFI.PullOptionButon();
     await CFI.EyeIconbtnClick();

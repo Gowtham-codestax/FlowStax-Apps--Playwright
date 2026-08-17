@@ -109,7 +109,7 @@ test.describe.serial('Pin_Reset_Req_Device_Change_Req', () => {
     await tso.EyeIconbtnClick();
     await accClose.applicationCorrectedButton();
     await accClose.NextButton();
-   // await accClose.MenuButton();
+    await accClose.MenuButton();
     await accClose.LogOut();
   });
 

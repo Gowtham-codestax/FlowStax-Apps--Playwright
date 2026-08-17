@@ -37,6 +37,11 @@
     "CIFGrop":{
       "username": "CIF1_COPS_Stagi@gmail.com",
       "password": "kPI!~KsWwyh62TZD$ehN"
+    },
+
+    "SOCCops":{
+      "username": "soc1_cops@gmail.com",
+      "password": "CLTC7Zpovr8bHn8sphrZ"
     }
 
   },
@@ -110,7 +115,7 @@
       "password": "HybjyJcjHWAYtgTvXbe!"
     },
 
-    "kbzPayCenterSr": {
+    "kbzPayCenterMaker1": {
       "username": "kbzpaycenter_sr@gmail.com",
       "password": "4vI$kVgf6hFwdyG2qnXR"
     },

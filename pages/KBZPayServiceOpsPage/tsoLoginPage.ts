@@ -124,6 +124,20 @@ export class tsoLoginPage extends BasePage {
     await this.forceClick(Pull);
   }
 
+  async Phone_Change_Request_Option(): Promise<void> {
+    const PhoneDeviceReqBtn = this.page
+      .locator("xpath=//flt-semantics/span[contains(text(),'Phone Change Request')]")
+      .first();
+    await PhoneDeviceReqBtn.waitFor({ state: 'attached' });
+    await this.page.waitForTimeout(1000);
+    await this.forceClick(PhoneDeviceReqBtn);
+
+    const Pull = this.page.locator("xpath=//flt-semantics[@role='button' and .='Pull']");
+    await Pull.waitFor({ state: 'attached' });
+    await this.page.waitForTimeout(500);
+    await this.forceClick(Pull);
+  }
+
   async pinResetAndDevice_Change_Option(): Promise<void> {
     const PINResetandDeviceChangeReqBtn = this.page
       .locator("xpath=//flt-semantics/span[contains(text(),'Pin Reset Request + Device Change Request')]")
@@ -156,28 +170,28 @@ export class tsoLoginPage extends BasePage {
   async resolvebutton(): Promise<void> {
     const Resolve = this.page.locator("xpath=//flt-semantics[contains(text(),'Resolve')]");
     await Resolve.waitFor({ state: 'attached' });
-    await this.page.waitForTimeout(500);
+    await this.page.waitForTimeout(2500);
     await this.forceClick(Resolve);
   }
 
   async makeForcorrectionbutton(): Promise<void> {
-    const Make = this.page.locator("xpath=//flt-semantics[contains(text(),'Mark for Correction')]");
+    const Make = this.page.locator("xpath=//flt-semantics[contains(text(),'Marked for Correction')]");
     await Make.waitFor({ state: 'attached' });
-    await this.page.waitForTimeout(500);
+    await this.page.waitForTimeout(2500);
     await this.forceClick(Make);
   }
 
   async needMoreInfobutton(): Promise<void> {
     const NeedInfo = this.page.locator("xpath=//flt-semantics[contains(text(),'Need more info')]");
     await NeedInfo.waitFor({ state: 'attached' });
-    await this.page.waitForTimeout(700);
+    await this.page.waitForTimeout(2500);
     await this.forceClick(NeedInfo);
   }
 
   async denyButton(): Promise<void> {
     const Denytbtn = this.page.locator("xpath=//flt-semantics[contains(text(),'Deny')]");
     await Denytbtn.waitFor({ state: 'visible' });
-    await this.page.waitForTimeout(1000);
+    await this.page.waitForTimeout(2500);
     await this.forceClick(Denytbtn);
   }
 

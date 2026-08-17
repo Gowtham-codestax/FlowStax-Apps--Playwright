@@ -60,7 +60,7 @@ export class Im_Banking_CIFPage extends BasePage {
 
     // Email
     const Email_Field = this.page.locator(
-      "xpath=//flt-semantics/span[.='Email ID *']/following::flt-semantics[1]/input[@data-semantics-role='text-field']"
+      "xpath=//flt-semantics/span[.='Email ID']/following::flt-semantics[1]/input[@data-semantics-role='text-field']"
     );
     await Email_Field.waitFor({ state: 'attached' });
     await this.page.waitForTimeout(800);

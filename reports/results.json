@@ -1,13 +1,6 @@
 {
   "config": {
-    "argv": [
-      "C:\\Program Files\\nodejs\\node.exe",
-      "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\node_modules\\@playwright\\test\\cli.js",
-      "test",
-      "tests/CentralOps/CompanyKYCUpdateTest.spec.ts",
-      "--project=chromium",
-      "--workers=1"
-    ],
+    "argv": [],
     "configFile": "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\playwright.config.ts",
     "rootDir": "C:/Users/User/Documents/Codestax.Ai/FLOWSTAX APPS/tests",
     "failOnFlakyTests": false,
@@ -57,7 +50,7 @@
         "html",
         {
           "outputFolder": "reports/html",
-          "open": "never"
+          "open": "always"
         }
       ],
       [
@@ -74,27 +67,27 @@
     "shard": null,
     "tags": [],
     "updateSnapshots": "missing",
-    "updateSourceMethod": "patch",
+    "updateSourceMethod": "3way",
     "version": "1.62.0",
-    "workers": 1,
+    "workers": 5,
     "webServer": null
   },
   "suites": [
     {
-      "title": "CentralOps\\CompanyKYCUpdateTest.spec.ts",
-      "file": "CentralOps/CompanyKYCUpdateTest.spec.ts",
+      "title": "KycVerification\\customerUrgentRequest_Resolved_Reject.spec.ts",
+      "file": "KycVerification/customerUrgentRequest_Resolved_Reject.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Company KYC Update -  Flow",
-          "file": "CentralOps/CompanyKYCUpdateTest.spec.ts",
-          "line": 14,
+          "title": "CustomerUrgentRequestFlow - Resolved -Status (Reject)",
+          "file": "KycVerification/customerUrgentRequest_Resolved_Reject.spec.ts",
+          "line": 16,
           "column": 15,
           "specs": [
             {
-              "title": "Company KYC Update - Branch ",
+              "title": " Cluster Manager  - Send To KYC Officer ",
               "ok": true,
               "tags": [],
               "tests": [
@@ -106,10 +99,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 5,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 125137,
+                      "duration": 69906,
                       "errors": [],
                       "stdout": [
                         {
@@ -121,7 +114,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-06T06:01:21.495Z",
+                      "startTime": "2026-08-17T12:05:42.478Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -129,10 +122,10 @@
                   "status": "expected"
                 }
               ],
-              "id": "89758e397fbb68a0f49a-d85f5d591c7f6436ab15",
-              "file": "CentralOps/CompanyKYCUpdateTest.spec.ts",
-              "line": 33,
-              "column": 10
+              "id": "e355c7d977e918883d0e-4949567ec1ef509b0f3c",
+              "file": "KycVerification/customerUrgentRequest_Resolved_Reject.spec.ts",
+              "line": 143,
+              "column": 7
             }
           ]
         }
@@ -141,8 +134,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-08-06T06:01:21.094Z",
-    "duration": 128100.394,
+    "startTime": "2026-08-17T12:05:41.311Z",
+    "duration": 75913.25700000022,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

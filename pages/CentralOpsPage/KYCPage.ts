@@ -184,7 +184,7 @@ export class KYCPage extends BasePage {
   }
 
   async EyeIconbtnClick(): Promise<void> {
-    await this.page.waitForTimeout(6000);
+    await this.page.waitForTimeout(7500);
     for (let i = 0; i < 46; i++) {
       await this.page.keyboard.press('Tab');
       await this.page.waitForTimeout(200);
@@ -229,13 +229,23 @@ export class KYCPage extends BasePage {
     await this.forceClick(Occupatione_Checkbox);
   }
 
+  async historyBtn():Promise<void>{
+
+      await this.page.waitForTimeout(2500);
+      const historyBtn = this.page.locator("xpath=//flt-semantics/span[.='History']");
+      await historyBtn.waitFor({state:'attached'});
+      await this.page.waitForTimeout(2000);
+      await historyBtn.click();
+      await this.page.waitForTimeout(2000);
+  }
+
   async MenuButton(): Promise<void> {
     const menu = this.page.locator("xpath=(//flt-semantics[@role='button'])[2]");
     for (let i = 0; i < 5; i++) {
       try {
         await menu.waitFor({ state: 'attached' });
         await menu.evaluate((el: HTMLElement) => el.scrollIntoView({ block: 'center' }));
-        await this.page.waitForTimeout(3500);
+        await this.page.waitForTimeout(7000);
         await menu.evaluate((el: HTMLElement) =>
           el.dispatchEvent(new MouseEvent('click', { bubbles: true }))
         );

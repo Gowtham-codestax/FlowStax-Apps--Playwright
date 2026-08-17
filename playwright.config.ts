@@ -18,10 +18,10 @@ export default defineConfig({
  // retries: process.env.CI ? 1 : 0,
 
  //🔁Retry failed tests 
-  retries:0,
+  retries:1,
 
  //🚀 Parallel execution
-  workers: 4,
+  workers: 5,
 
 
  // test can run for minutes. The default per-test timeout (30s) is far too low.
@@ -37,7 +37,7 @@ export default defineConfig({
     ['allure-playwright', {
       resultsDir: 'allure-results'}],
 
-    ['html', { outputFolder: 'reports/html', open: 'never' }],
+    ['html', { outputFolder: 'reports/html', open: 'always' }], // open: 'never' | 'on-failure' | 'always'
     ['json', { outputFile: 'reports/results.json' }],
   ],
 

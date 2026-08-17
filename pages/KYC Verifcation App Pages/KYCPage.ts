@@ -111,7 +111,7 @@ export class KYCPage extends BasePage {
 
   async uploadRequestForm_Btn(): Promise<void> {
     await this.uploadFile(
-      "xpath=//flt-semantics/span[.='Upload Request Form *']/following::flt-semantics[1]/input[@data-semantics-role='text-field']"
+      "xpath=//flt-semantics/span[.='Upload Request Form File *']/following::flt-semantics[1]/input[@data-semantics-role='text-field']"
     );
   }
 
@@ -185,7 +185,6 @@ export class KYCPage extends BasePage {
     await eyeiconbtn.waitFor({ state: 'visible' });
     await eyeiconbtn.click();
   }
-
   async EditIconbtnClick(): Promise<void> {
     const EditBtn = this.page.locator("xpath=//flt-semantics[.='Edit']");
     await EditBtn.waitFor({ state: 'attached' });
@@ -218,6 +217,16 @@ export class KYCPage extends BasePage {
     await this.page.waitForTimeout(180);
     await this.forceClick(Occupatione_Checkbox);
   }
+
+  async UpdateSatgeCMNTbox(): Promise<void> {
+    const UpdateSatgeCMNtTextField = this.page.locator(
+      "xpath=//flt-semantics/span/following::flt-semantics/textarea[@data-semantics-role='text-field']"
+    );
+    await UpdateSatgeCMNtTextField.waitFor({ state: 'visible' });
+    await this.page.waitForTimeout(1000);
+    await UpdateSatgeCMNtTextField.click();
+    await UpdateSatgeCMNtTextField.pressSequentially('Done');
+   }
 
   async MenuButton(): Promise<void> {
     const menu = this.page.locator("xpath=(//flt-semantics[@role='button'])[2]");
@@ -269,4 +278,14 @@ export class KYCPage extends BasePage {
       }
     }
   }
+
+
+  
+  async sendtoKYCOfficerbtn(): Promise<void> {
+    const sendToKycbtn = this.page.locator("xpath=(//flt-semantics[@role='button'])[14]");
+    await sendToKycbtn.waitFor({ state: 'visible' });
+    await sendToKycbtn.click();
+    await this.page.waitForTimeout(1000);
+  }
+  
 }

@@ -29,6 +29,7 @@ export class approvalDelayPage extends BasePage {
 
     const Calender = this.page.locator("xpath=//input[@aria-label='YYYY-MM-DD']");
     await Calender.waitFor({ state: 'visible' });
+    await this.page.waitForTimeout(1000);
     await Calender.click();
 
     const today = this.page.locator(
@@ -130,15 +131,17 @@ export class approvalDelayPage extends BasePage {
   }
 
   async uploadPassport_FrontPageBtn(): Promise<void> {
-    await this.uploadFile("xpath=(//input[@data-semantics-role='text-field'])[5]");
+    await this.uploadFile("xpath=//flt-semantics/span[.='Upload Passport Front Page *']/following::flt-semantics[1]/input[@data-semantics-role='text-field']");
   }
 
   async uploadPassport_BackpageBtn(): Promise<void> {
-    await this.uploadFile("xpath=(//input[@data-semantics-role='text-field'])[6]");
+    await this.uploadFile("xpath=//flt-semantics/span[.='Upload Passport Back Page *']/following::flt-semantics[1]/input[@data-semantics-role='text-field']"
+      );
   }
 
   async uploadRequestForm_Btn(): Promise<void> {
-    await this.uploadFile("xpath=(//input[@data-semantics-role='text-field'])[7]");
+    await this.uploadFile("xpath=//flt-semantics/span[.='Upload Request Form File *']/following::flt-semantics[1]/input[@data-semantics-role='text-field']"
+    );
   }
 
   async customerSegmentType(): Promise<void> {
@@ -154,23 +157,23 @@ export class approvalDelayPage extends BasePage {
   }
 
   async uploadSecondaryIDfrontPage_Btn(): Promise<void> {
-    await this.uploadFile("xpath=(//input[@data-semantics-role='text-field'])[8]");
+    await this.uploadFile("xpath=//flt-semantics/span[.='Upload Secondary Id Front Page']/following::flt-semantics[1]/input[@data-semantics-role='text-field']");
   }
 
   async uploadSecondaryIDBackPage_Btn(): Promise<void> {
-    await this.uploadFile("xpath=(//input[@data-semantics-role='text-field'])[9]");
+    await this.uploadFile("xpath=//flt-semantics/span[.='Upload Secondary Id Back Page']/following::flt-semantics[1]/input[@data-semantics-role='text-field']");
   }
 
   async uploadAdditionalDocument_Btn(): Promise<void> {
-    await this.uploadFile("xpath=(//input[@data-semantics-role='text-field'])[10]");
+    await this.uploadFile("xpath=//flt-semantics/span[.='Upload Additional Documents']/following::flt-semantics[1]/input[@data-semantics-role='text-field']");
   }
 
   async UploadNRCRecmendationLetter(): Promise<void> {
-    await this.uploadFile("xpath=(//input[@data-semantics-role='text-field'])[11]");
+    await this.uploadFile("xpath=//flt-semantics/span[.='Upload NRC Recommendation Letter']/following::flt-semantics[1]/input[@data-semantics-role='text-field']");
   }
 
   async UploadSelfPhoto(): Promise<void> {
-    await this.uploadFile("xpath=(//input[@data-semantics-role='text-field'])[12]");
+    await this.uploadFile("xpath=//flt-semantics/span[.='Upload Selfie Photo *']/following::flt-semantics[1]/input[@data-semantics-role='text-field']");
   }
 
   async NextButton(): Promise<void> {
@@ -190,17 +193,19 @@ export class approvalDelayPage extends BasePage {
     );
     await eyeiconbtn.waitFor({ state: 'visible' });
     await eyeiconbtn.evaluate((el: HTMLElement) => el.scrollIntoView({ block: 'center' }));
-    await this.page.waitForTimeout(1000);
+    await this.page.waitForTimeout(2300);
     await this.forceClick(eyeiconbtn);
   }
 
   async sendToCheckerBtn(): Promise<void> {
     const sendcheckerbtn = this.page.locator(
-      "xpath=//flt-semantics[@role='button' and contains(text(),'Send to Checker')]"
-    );
-    await sendcheckerbtn.waitFor({ state: 'visible' });
-    await this.page.waitForTimeout(6000);
-    await sendcheckerbtn.click();
+      "xpath=//flt-semantics[@role='button' and contains(.,'Send to Checker')]"
+    ).first();
+    await sendcheckerbtn.waitFor({ state: 'attached' });
+    await this.page.waitForTimeout(4000);
+    await this.forceClick(sendcheckerbtn);
+   
+   // await sendcheckerbtn.click();
   }
 
   async kbzcenterChecker_RadioBtn(): Promise<void> {

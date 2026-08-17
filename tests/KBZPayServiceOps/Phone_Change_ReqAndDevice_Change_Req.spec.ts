@@ -62,7 +62,7 @@ test.describe.serial('Phone_Change_ReqAndDevice_Change_Req', () => {
     await Phone_DeviceChange.assignToTSOBtn();
     await accClose.UpdateStage_Commentsection();
     await accClose.NextButton();
-    // await accClose.MenuButton();
+    await accClose.MenuButton();
     await accClose.LogOut();
   });
 
@@ -95,7 +95,7 @@ test.describe.serial('Phone_Change_ReqAndDevice_Change_Req', () => {
     await tso.EyeIconbtnClick();
     await accClose.applicationCorrectedButton();
     await accClose.NextButton();
-  //  await accClose.MenuButton();
+    await accClose.MenuButton();
     await accClose.LogOut();
   });
 

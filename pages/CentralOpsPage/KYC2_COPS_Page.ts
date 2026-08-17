@@ -26,6 +26,31 @@ export class KYC2_COPS_Page extends BasePage {
     );
   }
 
+  async completeButton(): Promise<void> {
+    const complaetButon = this.page.locator(
+      "xpath=//flt-semantics[@role='button' and contains(.,'Complete')]"
+    );
+    await complaetButon.waitFor({ state: 'visible' });
+    await complaetButon.evaluate((el: HTMLElement) => el.scrollIntoView({ block: 'center' }));
+    await this.page.waitForTimeout(1000);
+    await complaetButon.evaluate((el: HTMLElement) =>
+      el.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+    );
+  }
+
+ async reworkButton(): Promise<void> {
+    const reworkButon = this.page.locator(
+      "xpath=//flt-semantics[@role='button' and contains(.,'Rework')]"
+    );
+    await reworkButon.waitFor({ state: 'visible' });
+    await reworkButon.evaluate((el: HTMLElement) => el.scrollIntoView({ block: 'center' }));
+    await this.page.waitForTimeout(1000);
+    await reworkButon.evaluate((el: HTMLElement) =>
+      el.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+    );
+  }
+
+  
   async markForCorrection(): Promise<void> {
     const MakecorrectionButon = this.page.locator(
       "xpath=//flt-semantics[@role='button' and contains(.,'Mark for Correction')]"

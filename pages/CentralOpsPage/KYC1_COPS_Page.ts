@@ -192,6 +192,18 @@ export class KYC1_COPS_Page extends BasePage {
     );
   }
 
+  async reWorkCompletedButton(): Promise<void> {
+    const reworkbtn = this.page.locator(
+      "xpath=//flt-semantics[@role='button' and contains(.,'Rework Completed')]"
+    );
+    await reworkbtn.waitFor({ state: 'visible' });
+    await reworkbtn.evaluate((el: HTMLElement) => el.scrollIntoView({ block: 'center' }));
+    await this.page.waitForTimeout(1000);
+    await reworkbtn.evaluate((el: HTMLElement) =>
+      el.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+    );
+  }
+
   async escalateButton(): Promise<void> {
     const EscalateBtn = this.page.locator(
       "xpath=//flt-semantics[@role='button' and contains(text(),'Escalate')]"

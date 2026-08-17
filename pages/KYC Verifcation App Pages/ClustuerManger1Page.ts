@@ -26,9 +26,24 @@ export class ClustuerManger1Page extends BasePage {
   }
 
   async sendtoKYCOfficerbtn(): Promise<void> {
-    const sendToKycbtn = this.page.locator("xpath=(//flt-semantics[@role='button'])[14]");
+    const sendToKycbtn = this.page.locator("xpath=//flt-semantics[@role='button' and contains(.,'Send to KYC Officer')]");
     await sendToKycbtn.waitFor({ state: 'visible' });
     await sendToKycbtn.click();
-    await this.page.waitForTimeout(1000);
+    await this.page.waitForTimeout(2600);
+  }
+
+
+  async MarkForCorreectionbtn(): Promise<void> {
+    const loc = this.page.locator("xpath=//flt-semantics[@role='button' and contains(.,'Mark for Correction')]");
+    await loc.waitFor({ state: 'visible' });
+    await loc.click();
+    await this.page.waitForTimeout(2600);
+  }
+
+  async DenyBtn(): Promise<void> {
+    const loc = this.page.locator("xpath=//flt-semantics[@role='button' and contains(.,'Deny')]");
+    await loc.waitFor({ state: 'visible' });
+    await loc.click();
+    await this.page.waitForTimeout(2600);
   }
 }

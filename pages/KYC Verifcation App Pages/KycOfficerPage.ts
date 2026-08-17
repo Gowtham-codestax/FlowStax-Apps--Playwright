@@ -28,7 +28,7 @@ export class KycOfficerPage extends BasePage {
     await this.page.waitForTimeout(7000);
     for (let i = 0; i < 33; i++) {
       await this.page.keyboard.press('Tab');
-      await this.page.waitForTimeout(500);
+      await this.page.waitForTimeout(200);
     }
     const eyeiconbtn = this.page.locator(
       "xpath=(//flt-semantics[@style='position: absolute; overflow: visible; width: 40px; height: 40px; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 100, 7.5); pointer-events: all;'])[1]"
@@ -86,6 +86,32 @@ export class KycOfficerPage extends BasePage {
     await rejectedButton.waitFor({ state: 'visible' });
     await rejectedButton.click();
   }
+
+   async reSubmitButton(): Promise<void> {
+    const loc = this.page.locator(
+      "xpath=//flt-semantics/span[.='Approval Status *']/following::flt-semantics/span[.='Resubmitted']"
+    );
+    await loc.waitFor({ state: 'visible' });
+    await this.page.waitForTimeout(1500);
+    await loc.click();
+  }
+
+  async accountClosedButton(): Promise<void> {
+    const loc = this.page.locator(
+      "xpath=//flt-semantics/span[.='Approval Status *']/following::flt-semantics/span[.='Account Closed (Unverify)']"
+    );
+    await loc.waitFor({ state: 'visible' });
+    await loc.click();
+  }
+
+  async kycUpdatedButton(): Promise<void> {
+    const loc = this.page.locator(
+      "xpath=//flt-semantics/span[.='Approval Status *']/following::flt-semantics/span[.='KYC Updated']"
+    );
+    await loc.waitFor({ state: 'visible' });
+    await loc.click();
+  }
+
 
   async RemarkCMNTbox(): Promise<void> {
     const remarkTextField = this.page.locator(

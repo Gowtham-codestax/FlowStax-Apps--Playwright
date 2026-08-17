@@ -309,8 +309,9 @@ export class Phone_Change_ReqAndDevice_Change_ReqPage extends BasePage {
       "xpath=//flt-semantics/span[.='Is Recommendation letter uploaded *']/following::flt-semantics[1][@role='radio']"
     );
     await yes.waitFor({ state: 'visible' });
-    await this.page.waitForTimeout(500);
+    await this.page.waitForTimeout(1000);
     await this.forceClick(yes);
+   // await yes.check();
   }
 
   async signatureVerfied_YesRadioBtn(): Promise<void> {
@@ -320,6 +321,7 @@ export class Phone_Change_ReqAndDevice_Change_ReqPage extends BasePage {
     await yes.waitFor({ state: 'visible' });
     await this.page.waitForTimeout(500);
     await this.forceClick(yes);
+   // await yes.check();
   }
 
   async docChecked_YesRadioBtn(): Promise<void> {
@@ -329,6 +331,7 @@ export class Phone_Change_ReqAndDevice_Change_ReqPage extends BasePage {
     await yes.waitFor({ state: 'visible' });
     await this.page.waitForTimeout(500);
     await this.forceClick(yes);
+    //await yes.check();
   }
 
   async UpdateStage_Commentsection(): Promise<void> {
