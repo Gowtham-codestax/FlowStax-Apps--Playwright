@@ -1,2 +1,0 @@
-Retry logout button : 0
-Logout success

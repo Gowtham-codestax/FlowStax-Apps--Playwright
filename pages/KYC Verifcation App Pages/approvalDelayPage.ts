@@ -1,12 +1,3 @@
-/**
- * Source (Java): org.KycVerificationAppPages.approvalDelayPage
- * Migrated to: Playwright + TypeScript (Page Object)
- *
- * - Robot native file-picker sequences -> base.uploadFile() with the EXACT input xpath.
- * - EyeIconbtnClick TAB focus navigation kept: keyboard.press('Tab') x32, same sleeps.
- * - Actions moveToElement().click().sendKeys() -> hover()+click()+pressSequentially().
- * - js click/scrollIntoView -> forceClick()/locator.evaluate(). xpath copied EXACTLY.
- */
 import { Page } from '@playwright/test';
 import { BasePage } from '../../fixtures/BasePage';
 

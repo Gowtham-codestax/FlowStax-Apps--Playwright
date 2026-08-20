@@ -18,7 +18,7 @@ export default defineConfig({
  // retries: process.env.CI ? 1 : 0,
 
  //🔁Retry failed tests 
-  retries:1,
+  retries:0,
 
  //🚀 Parallel execution
   workers: 5,

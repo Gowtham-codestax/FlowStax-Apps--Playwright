@@ -1,16 +1,3 @@
-/**
- * Source (Java): org.CentralOpsPages.KYCPage
- * Migrated to: Playwright + TypeScript (Page Object)
- *
- * Structural notes:
- *  - Robot native file-picker sequences (uploadPassport_FrontPageBtn / _BackpageBtn /
- *    uploadRequestForm_Btn) -> base.uploadFile() with the EXACT input xpath (rule 3).
- *  - EyeIconbtnClick TAB focus navigation kept: keyboard.press('Tab') x46, same sleeps.
- *  - Actions moveToElement().click().sendKeys() -> hover()+click()+pressSequentially().
- *  - js click -> forceClick(); js scrollIntoView -> locator.evaluate(same JS);
- *    dispatchEvent(MouseEvent) -> locator.evaluate(same JS).
- *  - Menu/Logout retry loops kept at the SAME attempt count (5). xpath copied EXACTLY.
- */
 import { Page } from '@playwright/test';
 import { BasePage } from '../../fixtures/BasePage';
 
@@ -237,6 +224,79 @@ export class KYCPage extends BasePage {
       await this.page.waitForTimeout(2000);
       await historyBtn.click();
       await this.page.waitForTimeout(2000);
+  }
+
+  async markForCorrectionbtn(): Promise<void> {
+    const Markcoreectionbtn = this.page.locator(
+      "xpath=//flt-semantics[contains(text(),'Mark for Correction')]"
+    );
+    await Markcoreectionbtn.waitFor({ state: 'visible' });
+    await this.page.waitForTimeout(1000);
+    await Markcoreectionbtn.click();
+    await this.page.waitForTimeout(1000);
+  }
+
+
+
+  async applicationCorrectedBtn(): Promise<void> {
+    const loc = this.page.locator(
+      "xpath=//flt-semantics[@role='button' and contains(.,'Application Corrected')]"
+    );
+    await loc.waitFor({ state: 'visible' });
+    await this.page.waitForTimeout(1000);
+    await loc.click();
+    await this.page.waitForTimeout(1000);
+  }
+
+   async requestForClosure_Btn(): Promise<void> {
+    const loc = this.page.locator(
+      "xpath=//flt-semantics[@role='button' and contains(.,'Request for closure')]"
+    );
+    await loc.waitFor({ state: 'visible' });
+    await this.page.waitForTimeout(1000);
+    await loc.click();
+    await this.page.waitForTimeout(1000);
+  }
+
+
+   async ReasonForClosure_Reason(): Promise<void> {
+    const loc = this.page.locator(
+      "xpath=//flt-semantics/span[.='Reason for Closure *']//following::flt-semantics/span[.='Please select']"
+    );
+    await loc.waitFor({ state: 'visible' });
+    await this.page.waitForTimeout(1000);
+    await loc.click();
+    await this.page.waitForTimeout(1000);
+  }
+
+   async cutomerRefused_Option(): Promise<void> {
+    const loc = this.page.locator(
+      "xpath=//flt-semantics/span[.='Reason for Closure *']//following::flt-semantics/span[.='Customer refused']"
+    );
+    await loc.waitFor({ state: 'visible' });
+    await this.page.waitForTimeout(1200);
+    await loc.click();
+    await this.page.waitForTimeout(1000);
+  }
+
+  
+   async wrongapplication_Option(): Promise<void> {
+    const loc = this.page.locator(
+      "xpath=//flt-semantics/span[.='Reason for Closure *']//following::flt-semantics/span[.='Wrong application']"
+    );
+    await loc.waitFor({ state: 'visible' });
+    await this.page.waitForTimeout(1200);
+    await loc.click();
+    await this.page.waitForTimeout(1000);
+  }
+  async update_Commentsection(): Promise<void> {
+    const UpdatestageCMNTbox = this.page.locator(
+      "xpath=//textarea[@data-semantics-role[contains(.,'text-field')]]"
+    );
+    await UpdatestageCMNTbox.waitFor({ state: 'attached' });
+    await this.page.waitForTimeout(1000);
+    await UpdatestageCMNTbox.click();
+    await UpdatestageCMNTbox.pressSequentially('Test');
   }
 
   async MenuButton(): Promise<void> {

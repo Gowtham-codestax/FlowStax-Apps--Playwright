@@ -1,6 +1,11 @@
 {
   "config": {
-    "argv": [],
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/CentralOps/PremiumBanking_interest_Bulk_Rework.spec.ts"
+    ],
     "configFile": "C:\\Users\\User\\Documents\\Codestax.Ai\\FLOWSTAX APPS\\playwright.config.ts",
     "rootDir": "C:/Users/User/Documents/Codestax.Ai/FLOWSTAX APPS/tests",
     "failOnFlakyTests": false,
@@ -67,27 +72,27 @@
     "shard": null,
     "tags": [],
     "updateSnapshots": "missing",
-    "updateSourceMethod": "3way",
+    "updateSourceMethod": "patch",
     "version": "1.62.0",
     "workers": 5,
     "webServer": null
   },
   "suites": [
     {
-      "title": "KycVerification\\customerUrgentRequest_Resolved_Reject.spec.ts",
-      "file": "KycVerification/customerUrgentRequest_Resolved_Reject.spec.ts",
+      "title": "CentralOps\\PremiumBanking_interest_Bulk_Rework.spec.ts",
+      "file": "CentralOps/PremiumBanking_interest_Bulk_Rework.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "CustomerUrgentRequestFlow - Resolved -Status (Reject)",
-          "file": "KycVerification/customerUrgentRequest_Resolved_Reject.spec.ts",
-          "line": 16,
+          "title": "Premium Interest Update - Bulk Records (Done) ",
+          "file": "CentralOps/PremiumBanking_interest_Bulk_Rework.spec.ts",
+          "line": 11,
           "column": 15,
           "specs": [
             {
-              "title": " Cluster Manager  - Send To KYC Officer ",
+              "title": "Branch Login - Premium Banking",
               "ok": true,
               "tags": [],
               "tests": [
@@ -99,10 +104,10 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 69906,
+                      "duration": 83481,
                       "errors": [],
                       "stdout": [
                         {
@@ -114,7 +119,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-17T12:05:42.478Z",
+                      "startTime": "2026-08-20T12:02:24.561Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -122,10 +127,297 @@
                   "status": "expected"
                 }
               ],
-              "id": "e355c7d977e918883d0e-4949567ec1ef509b0f3c",
-              "file": "KycVerification/customerUrgentRequest_Resolved_Reject.spec.ts",
-              "line": 143,
-              "column": 7
+              "id": "cda21ddd6ff00991e676-ba040eee6c956d9bd860",
+              "file": "CentralOps/PremiumBanking_interest_Bulk_Rework.spec.ts",
+              "line": 32,
+              "column": 9
+            },
+            {
+              "title": "KYC1 Login - Mark For Correction",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 900000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 86735,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Menu clicked\n"
+                        },
+                        {
+                          "text": "Logout success\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-20T12:03:50.653Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cda21ddd6ff00991e676-29d8f129a4699c62bc6b",
+              "file": "CentralOps/PremiumBanking_interest_Bulk_Rework.spec.ts",
+              "line": 70,
+              "column": 9
+            },
+            {
+              "title": "branchTeam  - Application Corrected",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 900000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 51985,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Menu clicked\n"
+                        },
+                        {
+                          "text": "Logout success\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-20T12:05:17.591Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cda21ddd6ff00991e676-ad7696739cbf12628a38",
+              "file": "CentralOps/PremiumBanking_interest_Bulk_Rework.spec.ts",
+              "line": 112,
+              "column": 9
+            },
+            {
+              "title": "kyc1Cops Login - For Update",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 900000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 66699,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Menu clicked\n"
+                        },
+                        {
+                          "text": "Logout success\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-20T12:06:09.682Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cda21ddd6ff00991e676-490fe791c7a29395432b",
+              "file": "CentralOps/PremiumBanking_interest_Bulk_Rework.spec.ts",
+              "line": 132,
+              "column": 8
+            },
+            {
+              "title": "Kyc2Flow Login - For ReWork Button",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 900000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 68148,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Menu clicked\n"
+                        },
+                        {
+                          "text": "Logout success\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-20T12:07:16.495Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cda21ddd6ff00991e676-1e3893dc1ef813e7b7a5",
+              "file": "CentralOps/PremiumBanking_interest_Bulk_Rework.spec.ts",
+              "line": 165,
+              "column": 9
+            },
+            {
+              "title": "KYC1 Login - For Update",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 900000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 46125,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Menu clicked\n"
+                        },
+                        {
+                          "text": "Logout success\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-20T12:08:24.781Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cda21ddd6ff00991e676-1a01481ac484de983d85",
+              "file": "CentralOps/PremiumBanking_interest_Bulk_Rework.spec.ts",
+              "line": 198,
+              "column": 9
+            },
+            {
+              "title": "Kyc2Flow Login - For Done Button",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 900000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 63942,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Menu clicked\n"
+                        },
+                        {
+                          "text": "Logout success\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-20T12:09:11.100Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cda21ddd6ff00991e676-a98af8e908a66f531f77",
+              "file": "CentralOps/PremiumBanking_interest_Bulk_Rework.spec.ts",
+              "line": 221,
+              "column": 10
+            },
+            {
+              "title": "Branch Login - For Confirm Button ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 900000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 53431,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Menu clicked\n"
+                        },
+                        {
+                          "text": "Logout success\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-20T12:10:15.159Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cda21ddd6ff00991e676-e89802540277db495262",
+              "file": "CentralOps/PremiumBanking_interest_Bulk_Rework.spec.ts",
+              "line": 254,
+              "column": 9
             }
           ]
         }
@@ -134,9 +426,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-08-17T12:05:41.311Z",
-    "duration": 75913.25700000022,
-    "expected": 1,
+    "startTime": "2026-08-20T12:02:23.704Z",
+    "duration": 529147.4820000001,
+    "expected": 8,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

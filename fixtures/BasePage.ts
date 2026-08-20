@@ -6,6 +6,21 @@ import { Page, Locator } from '@playwright/test';
  */
 export const UPLOAD_FILE_PATH = 'C:\\Users\\User\\Music\\A dummy-pdf_2.pdf';
 
+export const MULTI_UPLOAD_FILE_PATH=
+         ['C:\\Users\\User\\Pictures\\currency.csv',
+          'C:\\Users\\User\\Pictures\\agreement.csv',
+          'C:\\Users\\User\\Pictures\\age.csv',];
+
+export const EditMultiUplaodFile_Paths=
+        [
+          'C:\\Users\\User\\Pictures\\Bulk CSV Files\\annual-enterprise-survey-2025-financial-year-provisional-size-bands (1).csv',
+          'C:\\Users\\User\\Pictures\\Bulk CSV Files\\business-operations-survey-2022-business-finance.csv',
+          'C:\\Users\\User\\Pictures\\Bulk CSV Files\\business-operations-survey-2022-information-and-communications-technology.csv',
+          'C:\\Users\\User\\Pictures\\Bulk CSV Files\\business-operations-survey-2022-price-and-wage-setting.csv',
+          'C:\\Users\\User\\Pictures\\Bulk CSV Files\\business-operations-survey-2023-business-operations.csv',
+          'C:\\Users\\User\\Pictures\\Bulk CSV Files\\business-operations-survey-2023-business-practices.csv',
+        ]
+
 /**
  * BasePage - shared helpers for all Page Objects.
  *
@@ -37,6 +52,7 @@ export class BasePage {
    * it opens a native file chooser, which Playwright intercepts via 'filechooser'.
    *   base.uploadFile("xpath=...", "C:\\Users\\User\\Music\\A dummy-pdf_2.pdf");
    */
+  // single File Upload
   async uploadFile(selector: string, filePath: string = UPLOAD_FILE_PATH): Promise<void> {
     const trigger = this.page.locator(selector);
     const [fileChooser] = await Promise.all([
@@ -45,6 +61,29 @@ export class BasePage {
       trigger.click(),
     ]);
     await fileChooser.setFiles(filePath);
+  }
+
+  // Multi File Upload
+  async MultiUploadFile(selector: string, filePath:string[]= MULTI_UPLOAD_FILE_PATH):Promise<void>{
+    const trigger=this.page.locator(selector);
+    const [fileChooser]= await Promise.all([
+
+      this.page.waitForEvent('filechooser'),
+      await this.page.waitForTimeout(1000),
+      trigger.click(),
+    ]);
+    await fileChooser.setFiles(filePath);
+  }
+
+  // EDIT Multi File Upload
+  async Edit_MultiUploadFile(selector: string, filePaths: string[] = EditMultiUplaodFile_Paths): Promise<void> {
+    const trigger = this.page.locator(selector);
+    const [fileChooser] = await Promise.all([
+        this.page.waitForEvent('filechooser'),
+        this.page.waitForTimeout(1000), // wait for the trigger to be ready
+        trigger.click(),
+    ]);
+    await fileChooser.setFiles(filePaths);
   }
 
   /** Scroll an element into view. Replaces js.executeScript scrollIntoView. */

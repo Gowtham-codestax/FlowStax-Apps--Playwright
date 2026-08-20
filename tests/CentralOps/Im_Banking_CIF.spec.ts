@@ -42,52 +42,92 @@ test.describe.serial('Im_Banking_CIF', () => {
     const ImBanking = new Im_Banking_CIFPage(page);
 
     await login.login(branchTeam.username, branchTeam.password);
+
     await DashBoard.clickAddNew();
+    
     await ImBanking.im_Banking_CIfOPtion();
+
     await ImBanking.enterCustomerDetails();
+
     await ImBanking.nrcIDproof();
+
     await ImBanking.uploadNRC_Back_PageBtn();
+
     await ImBanking.uploadNrcFront_PageBtn();
+
     await ImBanking.nrcNumberFields();
+
     await ImBanking.uploadReqForm_PageBtn();
+
     await ImBanking.mobileVerifed_YesRadioBtn();
+
     await ImBanking.signatureVerifed_YesRadioBtn();
+
     await ImBanking.makerCheckerCompleted_YesRadioBtn();
+
     await ImBanking.cifAndMakerAccCreated_inIbanking_YesRadioBtn();
+
     await ImBanking.nrcVerifed_YesRadioBtn();
+
     await ImBanking.typeOfCIFReCheckBoxes();
+
     await Kyc.RemarkTextField();
+
     await ImBanking.NextButton();
+
     await Kyc.EyeIconbtnClick();
+
     await ImBanking.EditIconClick();
+
     await ImBanking.NextButton();
+
     await ImBanking.MenuButton();
+
     await Kyc.LogOut();
+
   });
 
   // priority 2 - dependsOnMethods = im_Banking_CIFFlowTest
   test('CFI_Flow', async () => {
+
     const login = new LoginPage(page);
     const Kyc = new KYCPage(page);
     const CFI = new CFIPages(page);
 
     await login.login(CIFGrop.username, CIFGrop.password);
+
     await CFI.selectWorkFlowBtn();
+
     await CFI.im_BankingOption();
+
     await CFI.PullOptionButon();
+
     await CFI.EyeIconbtnClick();
+
     await CFI.startActionebutton();
+
     await CFI.UpdateStage_Commentsection();
+
     await Kyc.NextButton();
+
     await CFI.EyeIconbtnClick();
+
     await CFI.verifyAndActivebutton();
+
     await CFI.verifedandUserActivated_YES_Radiobtn();
+
     await Kyc.NextButton();
+
     await CFI.EyeIconbtnClick();
+
     await CFI.authorizebutton();
+
     await CFI.UpdateStage_Commentsection();
+
     await Kyc.NextButton();
+
     await Kyc.MenuButton();
+
     await Kyc.LogOut();
   });
 });

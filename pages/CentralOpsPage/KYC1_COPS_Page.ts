@@ -78,13 +78,22 @@ export class KYC1_COPS_Page extends BasePage {
   }
 
   async companyKycUpdateOption(): Promise<void> {
-
     const companyKycUpdateOption = this.page.locator("xpath=//flt-semantics/span[contains(.,'Company KYC Update')]"
     );
 
     await companyKycUpdateOption.waitFor({ state: 'attached' });
     await this.page.waitForTimeout(300);
     await this.forceClick(companyKycUpdateOption);
+
+  }
+
+  async premiumIntrestUpdtaeOPtion(): Promise<void> {
+    const loc = this.page.locator("xpath=//flt-semantics/span[contains(.,'Premium Banking Interest Update')]"
+    );
+
+    await loc.waitFor({ state: 'attached' });
+    await this.page.waitForTimeout(300);
+    await this.forceClick(loc);
 
   }
 
@@ -122,14 +131,14 @@ export class KYC1_COPS_Page extends BasePage {
     await this.page.waitForTimeout(4000);
     for (let i = 0; i < 36; i++) {
       await this.page.keyboard.press('Tab');
-      await this.page.waitForTimeout(300);
+      await this.page.waitForTimeout(200);
     }
     const eyeiconbtn = this.page.locator(
       "xpath=(//flt-semantics[@style='position: absolute; overflow: visible; width: 40px; height: 40px; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 100, 7.5); pointer-events: all;'])[1]"
     );
     await eyeiconbtn.waitFor({ state: 'visible' });
     await eyeiconbtn.evaluate((el: HTMLElement) => el.scrollIntoView({ block: 'center' }));
-    await this.page.waitForTimeout(500);
+    await this.page.waitForTimeout(400);
     await this.forceClick(eyeiconbtn);
   }
 
@@ -151,6 +160,19 @@ export class KYC1_COPS_Page extends BasePage {
     await Updatebtn.evaluate((el: HTMLElement) => el.scrollIntoView({ block: 'center' }));
     await this.page.waitForTimeout(1000);
     await Updatebtn.evaluate((el: HTMLElement) =>
+      el.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+    );
+  }
+
+
+  async doneButton(): Promise<void> {
+    const loc = this.page.locator(
+      "xpath=//flt-semantics[@role='button' and contains(text(),'Done')]"
+    );
+    await loc.waitFor({ state: 'visible' });
+    await loc.evaluate((el: HTMLElement) => el.scrollIntoView({ block: 'center' }));
+    await this.page.waitForTimeout(1000);
+    await loc.evaluate((el: HTMLElement) =>
       el.dispatchEvent(new MouseEvent('click', { bubbles: true }))
     );
   }
